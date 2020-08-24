@@ -1,9 +1,7 @@
 <div class="container">
   <h1>ToDo Uygulaması</h1>
   <div class="list-group">
-    <a class="list-group-item">Item 1</a>
-    <a class="list-group-item">Item 2</a>
-    <a class="list-group-item">Item 3</a>
+    <a class="list-group-item" *ngFor="let item of ItemList">{{item.ItemName}}</a>
   </div>
   <div class="list-group">
     <a class="list-group-item"><input type="text" class="form-control" [(ngModel)]="Item.ItemName"></a>

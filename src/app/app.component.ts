@@ -7,10 +7,13 @@ import { ToDo } from './Models/ToDo';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ToDoApp';
-  Item: ToDo = { ItemName: '', Completed: false };
+  ItemList: ToDo[] = [];
+  Item: ToDo = { Completed: false, ItemName: '' };
   AddItem(){
-    console.log("Eklenen Item: " + this.Item.ItemName);
-    this.Item.ItemName = "";
+    // console.log("Eklenen Item: " + this.Item.ItemName);
+    this.ItemList.push({ 'Completed': this.Item.Completed, 'ItemName': this.Item.ItemName });  // ilgili item dizimize eklenmiş oldu
+    this.Item.ItemName = '';
+    console.log(this.ItemList);
+
   }
 }
