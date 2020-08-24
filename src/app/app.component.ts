@@ -15,9 +15,14 @@ export class AppComponent {
     this.Item.ItemName = '';
     console.log(this.ItemList);
   }
+
   todoComplate(todo: ToDo){
     this.ItemList.find(x=> x.ItemName == todo.ItemName).Completed = true;
     console.log(this.ItemList);
+  }
 
+  delete(todo: ToDo){
+    let index = this.ItemList.indexOf(todo);
+    this.ItemList.splice(index,1);
   }
 }
