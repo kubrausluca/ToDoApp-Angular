@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToDo } from './Models/ToDo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ToDoApp';
+  Item: ToDo = { ItemName: '', Completed: false };
+  AddItem(){
+    console.log("Eklenen Item: " + this.Item.ItemName);
+    this.Item.ItemName = "";
+  }
 }
