@@ -1,7 +1,7 @@
 <div class="container">
   <h1>ToDo Uygulaması</h1>
   <div class="list-group">
-    <a class="list-group-item" *ngFor="let item of ItemList">{{item.ItemName}}</a>
+    <a [class]="item.Completed == true ? 'list-group-item list-group-item-success' : 'list-group-item list-group-item-warning'" *ngFor="let item of ItemList" (click)="todoComplate(item)">{{item.ItemName}}</a>
   </div>
   <div class="list-group">
     <a class="list-group-item"><input type="text" class="form-control" [(ngModel)]="Item.ItemName"></a>

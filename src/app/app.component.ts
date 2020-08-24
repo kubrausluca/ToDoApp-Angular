@@ -14,6 +14,10 @@ export class AppComponent {
     this.ItemList.push({ 'Completed': this.Item.Completed, 'ItemName': this.Item.ItemName });  // ilgili item dizimize eklenmiş oldu
     this.Item.ItemName = '';
     console.log(this.ItemList);
+  }
+  todoComplate(todo: ToDo){
+    this.ItemList.find(x=> x.ItemName == todo.ItemName).Completed = true;
+    console.log(this.ItemList);
 
   }
 }
